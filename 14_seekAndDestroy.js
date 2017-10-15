@@ -1,12 +1,16 @@
+// I couldn't solve this, the solution is from the forum
+
 function destroyer(arr) {
-    // Remove all the values
-    return arr;
+    var args = Array.prototype.slice.call(arguments);
+  
+    for (var i = 0; i < arr.length; i++) {
+      for (var j = 0; j < args.length; j++) {
+        if (arr[i] === args[j]) {
+          delete arr[i];
+        }
+      }
+    }
+    return console.log(arr.filter(Boolean));
   }
   
   destroyer([1, 2, 3, 1, 2, 3], 2, 3);
-
-
-  var x = [[1, 2, 3, 1, 2, 3], 2, 3];
-  console.log(x[0]);
-  console.log(x[1]);
-  console.log(x[2]);
